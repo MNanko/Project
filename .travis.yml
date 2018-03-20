@@ -2,6 +2,11 @@ language: ruby
 rvm:
 - 2.3.5
 deploy:
+  provider: heroku
   api_key:
     secure: QR9/Ei+RxW+fmNYdajNuQehexTmsrIhD0nGYpX4SxQdh1piZjFx14qmQu2wJamSgzn+V4SGChLXyJHjmRCV72LlsGbG6ySHftKZJ4WwH9ZswvUq5RMctle0DQGNcB+051ZCh1KLXPiSwE/rapcTSW4mqvgD+RDUG3n6bNYrA1yOiz3rO0wb2ckPwaJsSOGlQFlsm1CXCuP1KauNXqo5uOH2RS6ab/sQYWlRSNctI3XI4ImFserzFHOVAwmtHeK1yNbVi+2osGIsh2CCTtJzqB1kVA1HRdP45I3QuH3/j/FDVC2TkISeIzEGfLKKN8ghvB7DK5fHwtEXrQx4cRAS+hckzmHfkjVdVW4z3/9GrX32O2GPkv9O35Z46ibYKZ7/RPC8KCnSoxblHh60YrQyZXMQpt5+upj+qPsraLX++8itOGz/3kzcO+4c2YFf38yNDG4RGroFX2qYF4MZs4nkYBfo5sDZu3JWPyK8G38208EsHJq/VcDbIU4CqRkdoGkrKR17c+APfZB8RQUgMsSePjvFEXhDmKAGhFW+g/Sx2rtfCRVE02pMrvAjupNYPHl07JqT6/rO4r/5+c56bYY7Lh4NdJfBRtnG/NSthuWywdhl+oA0JKpJiuIoAg6ST6sO+ctURKEV1MO8KFPewQYwVvVr5zYxkgahgeQDdyqLDurk=
+  run: "rake db:migrate"
   app: project-nanko
+
+notifications:
+  email: false
