@@ -1,6 +1,6 @@
 class Town < ActiveRecord::Base
   before_validation :geocode
-  validates :name, :lat, :lon, presence:true
+  validates :town, :lat, :lon, presence:true
   
 end
  public
@@ -10,7 +10,7 @@ def forecast
 
   private
   def geocode
-    towns =Nominatim.search.city(self.name).limit(1)
+    towns =Nominatim.search.city(self.town).limit(1)
     if towns && towns.first
     current_town=towns.first
     self.lat=current_town.lat
