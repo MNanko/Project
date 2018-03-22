@@ -39,4 +39,4 @@ gem 'nominatim', '~> 0.0.6'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'forecast_io'
